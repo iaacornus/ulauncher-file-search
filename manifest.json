@@ -1,0 +1,19 @@
+{
+    "required_api_version": "2",
+    "name": "Demo extension",
+    "description": "Extension Description",
+    "developer_name": "James Aaron Erang",
+    "icon": "images/icon.png",
+    "options": {
+      "query_debounce": 0.1
+    },
+    "preferences": [
+      {
+        "id": "demo_kw",
+        "type": "keyword",
+        "name": "File Search",
+        "description": "Search files and directories.",
+        "default_value": "fs"
+      }
+    ]
+}
