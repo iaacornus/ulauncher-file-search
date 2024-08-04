@@ -1,7 +1,7 @@
 {
     "required_api_version": "2",
-    "name": "Demo extension",
-    "description": "Extension Description",
+    "name": "File Search",
+    "description": "Search files and directories.",
     "developer_name": "James Aaron Erang",
     "icon": "images/icon.png",
     "options": {
@@ -9,9 +9,9 @@
     },
     "preferences": [
       {
-        "id": "demo_kw",
+        "id": "kw",
         "type": "keyword",
-        "name": "File Search",
+        "name": "fs",
         "description": "Search files and directories.",
         "default_value": "fs"
       }
