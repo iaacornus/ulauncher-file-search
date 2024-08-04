@@ -14,7 +14,7 @@ def find_dir(HOME: str) -> list[str]:
     """
 
     DIRS: list[str] = []
-    system(
+    system( # batshit subprocess.call doesnt work for some reason
         " ".join(
             [
                 "find",
