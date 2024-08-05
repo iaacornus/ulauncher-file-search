@@ -53,3 +53,14 @@ def find_dir(HOME: str) -> list[str]:
 
     return DIRS
 
+
+def index_files(DIRS: list[str]):
+
+    print(DIRS)
+    for dir_ in DIRS:
+        _dir_: str = dir_.split("/")[-1]
+        if _dir_.startswith("."):
+            continue
+
+        explore_dir(dir_)
+
