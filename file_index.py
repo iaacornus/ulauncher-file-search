@@ -40,19 +40,7 @@ def find_dir(HOME: str) -> list[str]:
     """
 
     DIRS: list[str] = []
-    system( # batshit subprocess.call doesnt work for some reason
-        " ".join(
-            [
-                "find",
-                f"{HOME}",
-                "-maxdepth", "1",
-                "-type", "d",
-                "-name", "'*'",
-                ">>",
-                "dirs.txt"
-            ]
-        )
-    )
+    explore_dir(HOME)
 
     if not isfile("dirs.txt"):
         raise SystemExit()
