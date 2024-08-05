@@ -43,10 +43,10 @@ def find_dir(HOME: str) -> list[str]:
     DIRS: list[str] = []
     explore_dir(HOME)
 
-    if not isfile("dirs.txt"):
+    if not isfile("dirs_home.txt"):
         raise SystemExit()
 
-    with open("dirs.txt", "r", encoding="utf-8") as dirs_:
+    with open("dirs_home.txt", "r", encoding="utf-8") as dirs_:
         for dir_ in dirs_:
             if exists(_dir_ := dir_.strip("\n")):
                 DIRS.append(_dir_)
