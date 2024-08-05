@@ -17,10 +17,10 @@ def explore_dir(DIR: str):
     else:
         cmd: list[str] = [
                 "find",
-                f"{DIR}/",
+                f"{DIR}",
                 "-type", "f",
                 "-name", "'*'",
-                ">>",
+                ">",
                 "dirs.txt"
             ]
 
