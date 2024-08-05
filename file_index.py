@@ -1,23 +1,23 @@
-from os import system
+from os import system, environ
 from os.path import exists, isfile
 
 
 def explore_dir(DIR: str):
 
-    if DIR == f"{HOME}":
+    if DIR == f"{environ.get('HOME')}":
         cmd: list[str] = [
                 "find",
                 f"{DIR}",
                 "-maxdepth", "1",
                 "-type", "d",
                 "-name", "'*'",
-                ">>",
+                ">",
                 "dirs_home.txt"
             ]
     else:
         cmd: list[str] = [
                 "find",
-                f"{DIR}"
+                f"{DIR}/",
                 "-type", "f",
                 "-name", "'*'",
                 ">>",
@@ -27,6 +27,7 @@ def explore_dir(DIR: str):
     system( # batshit subprocess.call doesnt work for some reason
         " ".join(cmd)
     )
+
 
 def find_dir(HOME: str) -> list[str]:
     """
