@@ -2,6 +2,32 @@ from os import system
 from os.path import exists, isfile
 
 
+def explore_dir(DIR: str):
+
+    if DIR == f"{HOME}":
+        cmd: list[str] = [
+                "find",
+                f"{DIR}",
+                "-maxdepth", "1",
+                "-type", "d",
+                "-name", "'*'",
+                ">>",
+                "dirs_home.txt"
+            ]
+    else:
+        cmd: list[str] = [
+                "find",
+                f"{DIR}"
+                "-type", "f",
+                "-name", "'*'",
+                ">>",
+                "dirs.txt"
+            ]
+
+    system( # batshit subprocess.call doesnt work for some reason
+        " ".join(cmd)
+    )
+
 def find_dir(HOME: str) -> list[str]:
     """
     Find all the DIR in $HOME.
