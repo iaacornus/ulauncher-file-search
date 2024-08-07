@@ -38,7 +38,7 @@ def explore_dir(DIR: str) -> None:
     )
 
 
-def find_dir(HOME: str) -> list[str]:
+def list_dirs(HOME: str) -> list[str]:
     """
     Find all the DIR in $HOME.
 
