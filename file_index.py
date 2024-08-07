@@ -2,10 +2,19 @@ from os import system, environ
 from os.path import exists, isfile
 
 
-def explore_dir(DIR: str):
+def explore_dir(DIR: str) -> None:
+    """
+    Explores the provided dir.
+
+    Parameters:
+        DIR: str - directory to be explored.
+
+    Returns:
+        None.
+    """
 
     if DIR == f"{environ.get('HOME')}":
-        cmd: list[str] = [
+        cmd: list[str] = [ # set maxdepth=1 if the dir is $HOME.
                 "find",
                 f"{DIR}",
                 "-maxdepth", "1",
