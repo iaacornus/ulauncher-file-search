@@ -13,8 +13,9 @@ def explore_dir(DIR: str) -> None:
         None.
     """
 
+    # set maxdepth=1 if the dir is $HOME.
     if DIR == f"{environ.get('HOME')}":
-        cmd: list[str] = [ # set maxdepth=1 if the dir is $HOME.
+        cmd: list[str] = [
                 "find",
                 f"{DIR}",
                 "-maxdepth", "1",
@@ -33,7 +34,9 @@ def explore_dir(DIR: str) -> None:
                 "dirs.txt"
             ]
 
-    system( # batshit subprocess.call doesnt work for some reason
+    # batshit subprocess.call
+    # doesnt work for some reason
+    system(
         " ".join(cmd)
     )
 
@@ -53,7 +56,9 @@ def list_dirs(HOME: str) -> list[str]:
     if not isfile("dirs_home.txt"):
         explore_dir(HOME)
 
-    with open("dirs_home.txt", "r", encoding="utf-8") as dirs_:
+    with open(
+            "dirs_home.txt", "r", encoding="utf-8"
+        ) as dirs_:
         for dir_ in dirs_:
             if exists(_dir_ := dir_.strip("\n")):
                 DIRS.append(_dir_)
