@@ -28,6 +28,9 @@ def explore_dir(DIR: str) -> None:
         cmd: list[str] = [
                 "find",
                 f"{DIR}",
+                "-name", "'.*'",
+                "-prune",
+                "-o",
                 "-type", "f",
                 "-name", "'*'",
                 ">",
