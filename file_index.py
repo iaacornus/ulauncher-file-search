@@ -50,10 +50,8 @@ def list_dirs(HOME: str) -> list[str]:
     """
 
     DIRS: list[str] = []
-    explore_dir(HOME)
-
     if not isfile("dirs_home.txt"):
-        raise SystemExit()
+        explore_dir(HOME)
 
     with open("dirs_home.txt", "r", encoding="utf-8") as dirs_:
         for dir_ in dirs_:
