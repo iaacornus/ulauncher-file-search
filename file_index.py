@@ -66,13 +66,24 @@ def list_dirs(HOME: str) -> list[str]:
     return DIRS
 
 
-def index_files(DIRS: list[str]):
+def index_files(DIRS: list[str], HOME: str) -> None:
+    """
+    Index all files in given array of dir.
 
-    print(DIRS)
+    Parameters:
+        DIRS: list[str] - array of dir.
+        HOME: str - $HOME.
+
+    Returns:
+        None.
+    """
+
+    if not DIRS:
+        raise SystemExit("Cannot index files.")
+
     for dir_ in DIRS:
-        _dir_: str = dir_.split("/")[-1]
-        if _dir_.startswith("."):
+        _dir_: str = dir_.replace(f"{HOME}/", "")
+        if _dir_.startswith(".") or _dir_ == HOME:
             continue
 
         explore_dir(dir_)
-
