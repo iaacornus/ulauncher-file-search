@@ -1,3 +1,12 @@
+"""
+*
+* GPL v3 license -- 2024 James Aaron Erang <iaacornus.devel@gmail.com>
+*
+* A ulauncher extension for file/directory search based on work of
+* brpaz/ulauncher-file-search.
+*
+"""
+
 from os import system, environ
 from os.path import exists, isfile
 
