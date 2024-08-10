@@ -1,9 +1,10 @@
 """
 *
-* GPL v3 license -- 2024 James Aaron Erang <iaacornus.devel@gmail.com>
+* GPL v3 license -- 2024 James Aaron Erang
+*                   <iaacornus.devel@gmail.com>
 *
-* A ulauncher extension for file/directory search based on work of
-* brpaz/ulauncher-file-search.
+* Indexes the file system.
+* Called by main.py and index.sh
 *
 """
 
