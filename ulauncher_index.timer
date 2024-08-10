@@ -1,0 +1,11 @@
+[Unit]
+Description=Index $HOME filesystem.
+Requires=ulauncher_index.service
+
+[Timer]
+OnBootSec=5min
+OnUnitActiveSec=24h
+Unit=ulauncher_index.service
+
+[Install]
+WantedBy=default.target
